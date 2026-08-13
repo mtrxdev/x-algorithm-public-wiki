@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  --ink: #1a1a1a;
+  --muted: #4a4a4a;
+  --line: #d6d6d0;
+  --paper: #f7f4ee;
+  --code: #f0ece4;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 20px/1.55 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.shell { display: grid; grid-template-columns: 240px minmax(0, 72ch) ; gap: 2.5rem; max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 6rem; }
+.lede { font-size: 1.15rem; }
+.kicker { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); font-family: system-ui, sans-serif; }
+.toc { position: sticky; top: 1.5rem; align-self: start; font-family: system-ui, sans-serif; font-size: 0.85rem; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc ol { list-style: none; padding: 0; }
+.toc .h3 { padding-left: 0.8rem; }
+article h2 { margin-top: 2.5rem; }
+pre, code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; }
+pre { background: var(--code); padding: 1rem; overflow: auto; border: 1px solid var(--line); }
+.card { border-top: 1px solid var(--line); padding: 1.25rem 0 1.75rem; display: grid; gap: 1rem; }
+@media (min-width: 900px) {
+  .card { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 899px) {
+  .shell { grid-template-columns: 1fr; }
+  .toc { position: static; }
+}
+.cite { font-family: system-ui, sans-serif; font-size: 0.78rem; color: var(--muted); }

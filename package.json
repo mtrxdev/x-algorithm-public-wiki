@@ -9,8 +9,19 @@
     "verify": "tsx scripts/verify-manifest.ts"
   },
   "devDependencies": {
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
-    "@types/node": "^22.10.0"
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.3.0",
+    "next": "^15.5.23",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   }
 }
