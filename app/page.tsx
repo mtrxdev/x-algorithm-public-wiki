@@ -3,12 +3,14 @@ import path from "path";
 import Article from "../content/article.mdx";
 import { ArticleLayout } from "@/components/ArticleLayout";
 import { extractHeadings } from "@/lib/headings";
+import { loadManifest } from "@/lib/loadManifest";
 
 export default function Page() {
   const source = fs.readFileSync(path.join(process.cwd(), "content/article.mdx"), "utf8");
   const headings = extractHeadings(source);
+  const manifest = loadManifest(process.cwd());
   return (
-    <ArticleLayout headings={headings} commit="unknown" fetchedAt="not-yet">
+    <ArticleLayout headings={headings} commit={manifest.commit} fetchedAt={manifest.fetched_at}>
       <Article />
     </ArticleLayout>
   );

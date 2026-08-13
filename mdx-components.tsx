@@ -1,7 +1,11 @@
 import type { MDXComponents } from "mdx/types";
+import { EvidenceBlock } from "@/components/EvidenceBlock";
+import { LimitBlock } from "@/components/LimitBlock";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    EvidenceBlock,
+    LimitBlock,
     h2: ({ children }) => {
       const text = String(children);
       const id = text
