@@ -21,7 +21,7 @@ body {
 .toc a { color: var(--muted); text-decoration: none; }
 .toc ol { list-style: none; padding: 0; }
 .toc .h3 { padding-left: 0.8rem; }
-article h2 { margin-top: 2.5rem; }
+h2 { margin-top: 2.5rem; }
 pre, code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; }
 pre { background: var(--code); padding: 1rem; overflow: auto; border: 1px solid var(--line); }
 .card { border-top: 1px solid var(--line); padding: 1.25rem 0 1.75rem; display: grid; gap: 1rem; }
