@@ -124,3 +124,15 @@ Do not extract those files in this inventory task. Task 5 copies excerpts with `
 - Browser narrow: 390×844. On live Vercel the page was 476px wide and cropped the title (unconstrained `pre`/`code` plus `grid-template-columns: 1fr`). After `app/globals.css` (`minmax(0, 1fr)`, `min-width: 0`, `pre { max-width: 100% }`, `overflow-wrap: anywhere`) local recheck: `scrollWidth` 390, TOC `position: static` and stacked above the article (no overlap), cards single-column 350px, long excerpts scroll inside `pre` only. Clicked all seven TOC anchors again; all in view.
 - Vercel URL: https://x-algorithm-public-wiki.vercel.app
 - Review handoff: Step 4 (`requesting-code-review`) is not run in this task. The controller will run it as the whole-branch review after Steps 1–3.
+
+## Redesign verification
+
+- Date: 2026-08-13
+- Branch: `feat/creator-longread-redesign` at `f8ed357` (`feat: add reduced-motion-safe chapter fades`) plus this note.
+- Tests: `npm test` pass (12/12)
+- Verifier: `npm run verify` output: `manifest ok (excerpt files present; vendor clone not present)`
+- Build: `npm run build` pass (`/` and `/_not-found` static)
+- Copy check: banned gaming verbs (`evade`, `farm`, `game the`, `boost your`, `get more reach`) do not appear in `content/article.mdx` or checklist labels. Eight chapter `h2`s: What this drop is; How a post is found; How it is scored; What can hide or cover it; What is missing; What you can actually run or reuse; How we checked; Sources. Cannot-do remains substantial (nine `LimitBlock`s, including a dedicated “What is missing” chapter).
+- Browser: Chrome DevTools MCP is connected but has no Chrome at `/opt/google/chrome/chrome`. Used Playwright Chromium against local `npx next start` on `:3000`. Desktop 1280×800: no document overflow. Clicked all six checklist hashes (`#visibility-rules` … `#scoring-weights`) and all eight TOC hashes; each target entered the viewport (last headings sit at document end). Opened `/missing-page` (HTTP 404, “That page is not part of this report.” + “Back to the article”) and followed that link to `/`. Narrow 390×844: `scrollWidth` 390, TOC `position: static`, no page overflow; same checklist and TOC clicks. `prefers-reduced-motion: reduce`: all `.shell h2` stay `opacity: 1` / `transform: none`. Could not click in a real Chrome window.
+- Deploy: `git push -u origin feat/creator-longread-redesign` (no `vercel --prod`, no `vendor/` upload). Vercel git-deploy of `f8ed357` completed as Preview. Default production branch remains `feat/x-algorithm-public-wiki`, so https://x-algorithm-public-wiki.vercel.app still serves the pre-redesign article. Preview URLs: https://x-algorithm-public-wiki-git-feat-creator-c36c56-matrx-fe91629e.vercel.app and https://x-algorithm-public-wiki-gfu9b5i8k-matrx-fe91629e.vercel.app — both redirect to Vercel SSO; not publicly fetchable. Dashboard: https://vercel.com/matrx-fe91629e/x-algorithm-public-wiki/FF89vAgHcjYTgF3ocmToUyZidQXB
+- Review handoff: Task 6 Step 6 (`requesting-code-review` on the whole feature branch) is not run in this task. The controller will run that whole-branch review after Steps 1–5.

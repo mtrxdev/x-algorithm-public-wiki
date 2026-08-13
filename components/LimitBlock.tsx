@@ -20,7 +20,7 @@ export function LimitBlock({
     "utf8",
   );
   return (
-    <section className="card">
+    <section className="card" id={id}>
       <div>
         <h3>{headline}</h3>
         <p>{prose}</p>
