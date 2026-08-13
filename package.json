@@ -1,0 +1,16 @@
+{
+  "name": "x-algorithm-public-wiki",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "tsx --test tests/*.test.ts",
+    "verify": "tsx scripts/verify-manifest.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.0"
+  }
+}
