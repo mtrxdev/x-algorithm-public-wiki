@@ -6,6 +6,12 @@
 
 Clone command: `git clone --depth 1 https://github.com/xai-org/x-algorithm.git vendor/x-algorithm`. `git -C vendor/x-algorithm rev-parse HEAD` is the SHA above. `git check-ignore -v vendor/x-algorithm` reports `.gitignore:5:vendor`.
 
+## Deploy
+
+- GitHub: https://github.com/mtrxdev/x-algorithm-public-wiki (public). Default branch is `feat/x-algorithm-public-wiki` — this worktree is not `main`.
+- Production: https://x-algorithm-public-wiki.vercel.app
+- Vercel project `x-algorithm-public-wiki` is linked to that repo, framework Next.js, root `.`, no env vars.
+
 ## Top-level map
 
 Every row is from `ls -1 vendor/x-algorithm` plus opening that path's README or first source file. Runnable means a person can train or serve from *this* drop without internal X/xAI services, production data, or unpublished build files.
