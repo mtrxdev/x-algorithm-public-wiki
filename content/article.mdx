@@ -8,15 +8,14 @@ X published a public folder of code that, in the repository’s own words, is th
   prose="The first lines of the repository say this is the core code that picks which posts a viewer sees in For You. It says those posts come from accounts the viewer follows and from accounts they do not, then get filtered and ranked."
 />
 
-The README names the folders in that drop. Here is that map in everyday words.
+The README names the folders in a components table. Here is that map in everyday words, next to the table itself.
 
-**Putting a feed together.** `home-mixer` is the folder that builds the For You list: the steps, the scoring weights, and the calls to other systems. `candidate-pipeline` is the toolkit of step types that mixer is built on.
-
-**Finding posts.** `thunder` keeps recent posts from accounts a viewer follows. `phoenix` looks up posts that sit near the viewer as lists of numbers, and also ranks them. `simclusters` groups accounts and posts by who engages with what, then uses those groups to find more posts. `phoenix-rankall` keeps the lookup list Phoenix searches. `phoenix-rankall-strato` decides which list a post belongs on.
-
-**Ranking and variety.** Phoenix ranking guesses how likely a viewer is to act on a post. `vm-ranker` then reorders already-scored posts so neighbors are a bit less alike.
-
-**Labels, hide, and show.** `visibility-filtering` answers allow, cover, or drop. `grox` looks at a post as it is published for things like spam, adult content, and violent media. `media-model-proxy` and `clip` are the image and video scoring pieces those labels use. `agatha`, `bdsm`, `user-cred-v2`, `adult-content`, and `pnsfwmedia` score accounts or media. `scarecrow`, `botmaker`, and `botmaker-rules` apply written label rules. `abuse-enforcement-service` can label, challenge, or suspend an account. `safety-label-user-agg` rolls post labels up to the account. `under-the-hood` builds the public label report.
+<EvidenceBlock
+  id="readme-components"
+  headline="The published folder list is the README’s own map"
+  prose="Home Mixer builds the For You list. Thunder holds recent posts from accounts you follow. Phoenix finds nearby posts and also ranks them. SimClusters groups accounts and posts by who engages with what. Visibility filtering decides whether a post is shown. Grox, scarecrow, botmaker, and the other named folders are the label and scoring pieces that same table lists."
+  need="These names and one-line jobs come from the README Components tables."
+/>
 
 ## How to read this page
 
@@ -98,7 +97,7 @@ Every gray box is a quote from a file in that public folder. The small line unde
 <LimitBlock
   id="grox-prompts-excluded"
   headline="The Grox prompt files are missing on purpose"
-  prose="A comment in the Grox prompt loader repeats the README: the prompts are left out so people cannot game the system. The loader still names template files that are not in the tree. You can see that the prompts were withheld. You cannot reconstruct the missing text from this file."
+  prose="A comment in the Grox prompt loader repeats the README: the prompts are left out so people cannot game the system. The same file still asks for a template named safety_ptos.j2. You can see that the prompts were withheld. You cannot reconstruct the missing text from this file."
 />
 
 <LimitBlock
@@ -127,8 +126,8 @@ Every gray box is a quote from a file in that public folder. The small line unde
 
 <LimitBlock
   id="ads-who-to-follow"
-  headline="This drop does not assemble ads or Who to Follow"
-  prose="The README diagram says ranked posts are only one source in the last mix. The other items it names are ads, Who to Follow, prompts, and similar non-post slots. Those extra sources are named around the ranked posts. Their implementations are not a walk-up run in this folder."
+  headline="Ads and Who to Follow are named as extra slots around ranked posts"
+  prose="The README diagram says ranked posts are one source in the last mix. The others it names are ads, Who to Follow, prompts, and similar non-post items. It says BlenderSelector interleaves them, and that Who to Follow and prompts go at fixed positions. Those extra slots are named around the ranked posts. They are not a separate top-level runnable drop."
 />
 
 <LimitBlock

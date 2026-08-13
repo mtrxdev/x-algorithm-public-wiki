@@ -1,1 +1,6 @@
 # As stated in README for the open source repo, prompts are excluded to reduce gameability of the system.
+
+
+@cache
+def safety_ptos_prompt() -> str:
+    return _env.get_template("safety_ptos.j2").render()

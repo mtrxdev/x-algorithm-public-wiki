@@ -13,6 +13,15 @@
       "excerpt_file": "readme-lede.txt"
     },
     {
+      "id": "readme-components",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 221,
+      "end_line": 301,
+      "excerpt_file": "readme-components.txt"
+    },
+    {
       "id": "readme-phoenix-runnable",
       "repo": "xai-org/x-algorithm",
       "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
@@ -117,7 +126,7 @@
       "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
       "path": "grox/flows/ptos/prompts.py",
       "start_line": 11,
-      "end_line": 11,
+      "end_line": 16,
       "excerpt_file": "grox-prompts-excluded.txt"
     },
     {
