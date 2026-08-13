@@ -114,3 +114,13 @@ Confirmed at `a389166f6cf5da70a286b568c87695d4dcdce3a1` (same as the plan's auth
 | bdsm-thresholds-redacted | bdsm/README.md | 104–112 | 9.99 sentinel |
 
 Do not extract those files in this inventory task. Task 5 copies excerpts with `scripts/extract-excerpt.ts`.
+
+## Verification
+
+- Tests: `npm test` pass (9/9) on 2026-08-13
+- Verifier: `npm run verify` output: `manifest ok (checked against vendor clone)`
+- Build: `npx next build` pass
+- Browser desktop: Chrome DevTools MCP was unavailable (no Chrome at `/opt/google/chrome/chrome`). Used Playwright Chromium against the live Vercel URL, then again against `npx next start` after a CSS fix. Scrolled the article. Clicked all seven TOC anchors (`#what-x-released` through `#sources`); each heading entered the viewport. Confirmed 19 cards each have layman prose, a `<pre><code>` excerpt, and a citation. GET of 17 unique GitHub permalinks returned HTTP 200. Opened `/missing-page` (404 copy + “Back to the article”) and followed that link to `/`.
+- Browser narrow: 390×844. On live Vercel the page was 476px wide and cropped the title (unconstrained `pre`/`code` plus `grid-template-columns: 1fr`). After `app/globals.css` (`minmax(0, 1fr)`, `min-width: 0`, `pre { max-width: 100% }`, `overflow-wrap: anywhere`) local recheck: `scrollWidth` 390, TOC `position: static` and stacked above the article (no overlap), cards single-column 350px, long excerpts scroll inside `pre` only. Clicked all seven TOC anchors again; all in view.
+- Vercel URL: https://x-algorithm-public-wiki.vercel.app
+- Review handoff: Step 4 (`requesting-code-review`) is not run in this task. The controller will run it as the whole-branch review after Steps 1–3.
