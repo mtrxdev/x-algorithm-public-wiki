@@ -1,0 +1,3 @@
+> end with nothing external. One training-recipe exception is disclosed in
+> [TRAINING.md](TRAINING.md): the dense-optimizer slot ships as standard
+> AdamW rather than production's tuned internal variant.

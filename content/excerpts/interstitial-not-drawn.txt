@@ -1,0 +1,2 @@
+│    interstitial  ──►  the post stays in the feed; nothing in this                        │
+│               repository draws the interstitial                                          │

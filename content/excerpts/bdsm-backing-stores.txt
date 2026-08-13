@@ -1,0 +1,5 @@
+- The pipeline reads action sequences from an internal key-value store
+  via a gRPC sidecar, and account metadata over HTTP. Those clients are
+  included for completeness but the backing services are not part of this
+  release; adapt the fetch layer
+  (`runtime/manhattan_scorer.py:ManhattanArrowReader`) to your data source.

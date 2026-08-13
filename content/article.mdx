@@ -1,27 +1,147 @@
 ## What X released
 
-The public folder list and the repository’s own words go here after the inventory.
+X published a public folder of code that, in the repository’s own words, is the core code that decides which posts a viewer sees in the For You feed. That is a statement about this folder, not a promise that you can turn on X’s live feed from your laptop.
+
+<EvidenceBlock
+  id="readme-lede"
+  headline="This folder is the published For You ranking code"
+  prose="The first lines of the repository say this is the core code that picks which posts a viewer sees in For You. It says those posts come from accounts the viewer follows and from accounts they do not, then get filtered and ranked."
+/>
+
+The README names the folders in that drop. Here is that map in everyday words.
+
+**Putting a feed together.** `home-mixer` is the folder that builds the For You list: the steps, the scoring weights, and the calls to other systems. `candidate-pipeline` is the toolkit of step types that mixer is built on.
+
+**Finding posts.** `thunder` keeps recent posts from accounts a viewer follows. `phoenix` looks up posts that sit near the viewer as lists of numbers, and also ranks them. `simclusters` groups accounts and posts by who engages with what, then uses those groups to find more posts. `phoenix-rankall` keeps the lookup list Phoenix searches. `phoenix-rankall-strato` decides which list a post belongs on.
+
+**Ranking and variety.** Phoenix ranking guesses how likely a viewer is to act on a post. `vm-ranker` then reorders already-scored posts so neighbors are a bit less alike.
+
+**Labels, hide, and show.** `visibility-filtering` answers allow, cover, or drop. `grox` looks at a post as it is published for things like spam, adult content, and violent media. `media-model-proxy` and `clip` are the image and video scoring pieces those labels use. `agatha`, `bdsm`, `user-cred-v2`, `adult-content`, and `pnsfwmedia` score accounts or media. `scarecrow`, `botmaker`, and `botmaker-rules` apply written label rules. `abuse-enforcement-service` can label, challenge, or suspend an account. `safety-label-user-agg` rolls post labels up to the account. `under-the-hood` builds the public label report.
 
 ## How to read this page
 
-Every claim on this page quotes a real file. The box next to the words is the evidence, not a tutorial.
+Every gray box is a quote from a file in that public folder. The small line under it is the file name, line numbers, and the exact commit we copied from. If a sentence cannot point at a box, it does not belong on this page.
 
 ## What you can actually run
 
-Cards go here after excerpts exist.
+<EvidenceBlock
+  id="readme-phoenix-runnable"
+  headline="You can try a tiny practice run of the ranking model"
+  prose="The repository says some of this code is meant to be run from start to finish. The example it gives is training and running the Phoenix scoring model. That is a practice-size run they describe, not flipping on the real X feed."
+  need="The Phoenix folder ships its own quickstart, a Python project file, and a Rust project file."
+/>
+
+<EvidenceBlock
+  id="phoenix-quickstart-requirements"
+  headline="That practice run expects a Linux computer with an NVIDIA graphics card"
+  prose="The quickstart is blunt about the tools. You need Linux, an NVIDIA GPU with CUDA 12, a Python installer called uv, Python 3.11 or newer, a Rust compiler, and a program called protoc. If you do not have that machine, you can still read the code. You should not expect the training walkthrough to work on a normal laptop."
+  need="These are the requirements printed in phoenix/QUICKSTART.md."
+/>
 
 ## What you can actually build or reuse
 
-Cards go here after excerpts exist.
+<EvidenceBlock
+  id="readme-license"
+  headline="You may reuse the published files under the Apache 2.0 license"
+  prose="The repository says it is licensed under Apache License 2.0 and points at the LICENSE file. That is permission to read, copy, and build on the published files under that license. It is not permission to use X’s name, private data, or unreleased files."
+/>
+
+<EvidenceBlock
+  id="readme-inspectable"
+  headline="You can read and copy the ranking and filter source"
+  prose="The same README says all of the code here is inspectable. Some of it is even meant to be run from start to finish. That is a reuse claim about reading and adapting the published files, not a claim that every folder will build on your computer."
+  need="The file says the point of the folder is so people can inspect the code that affects whether a post is shown."
+/>
+
+<EvidenceBlock
+  id="scoring-weights"
+  headline="You can read the published scoring-weight defaults"
+  prose="A comment in the weight file says the numbers mix how much an action is valued with how common that action is. The defaults next to that comment include 0.5 for a favorite, 5.0 for a reply, and 15.0 for a reply-weight boost when two accounts follow each other. Those are the values printed in this drop, not a live dashboard."
+  need="The weights live in home-mixer/params/param.rs, which the README points to."
+/>
+
+<EvidenceBlock
+  id="bidirectional-boost"
+  headline="You can see one example of a ranking number changing over time"
+  prose="A short doc walks through the bidirectional-follow reply boost as an example of what a param change looks like. It says an A/B test tried values including 5, 10, 15, and 20, then a wider roll-out used 20, then the value was set to 15. That is a published history of one number, not a live experiment you can join."
+  need="The README points at docs/BIDIRECTIONAL_BOOST_CHANGE.md as the example of a param changing over time."
+/>
+
+<EvidenceBlock
+  id="visibility-rules"
+  headline="You can read the published hide-and-show rule order"
+  prose="The README says the first rule that answers drop stops the rest. A second set of rules applies only when the post is a recommendation from an account the viewer does not follow, and those rules can only drop. Both lists are in visibility-filtering/rules/registry.rs. You can read that order. You cannot launch the live filter service from this drop."
+  need="The rule file is listed in evaluation order, as the README states."
+/>
+
+<EvidenceBlock
+  id="bdsm-lede"
+  headline="You can read the bot-and-spam model code, not the live tripwires"
+  prose="The BDSM folder describes a model that looks at a sequence of actions to spot inauthentic accounts. It ships training and a reference scoring pipeline. Reuse here means reading or adapting that model code. It does not mean shipping X’s production enforcement numbers."
+  need="The folder includes a Python project file and training scripts. The live stores and tripwire numbers are listed as missing later on this page."
+/>
 
 ## What you cannot do / what is missing
 
-Cards go here after excerpts exist.
+<LimitBlock
+  id="phoenix-quickstart-limits"
+  headline="You cannot recreate X’s live ranking setup from this walkthrough"
+  prose="The Phoenix quickstart says the walkthrough is not a production-quality model and not a production-scale setup. It says production data, saved models, the computers that run the real feed, and that scale are not included. A successful practice run still is not the For You feed."
+/>
+
+<LimitBlock
+  id="readme-not-published"
+  headline="Some of the real decision text is not in the folder"
+  prose="The repository says a limited set of files is not published. The examples it gives are the Grox prompt files and some botmaker rules. So you cannot audit those exact prompts from this drop, even though nearby folders are public."
+/>
+
+<LimitBlock
+  id="grox-prompts-excluded"
+  headline="The Grox prompt files are missing on purpose"
+  prose="A comment in the Grox prompt loader repeats the README: the prompts are left out so people cannot game the system. The loader still names template files that are not in the tree. You can see that the prompts were withheld. You cannot reconstruct the missing text from this file."
+/>
+
+<LimitBlock
+  id="readme-deployment"
+  headline="Most of these services are here to be read, not launched"
+  prose="The same README says the point of the folder is so people can inspect the code that affects whether a post is shown. It says that outside Phoenix, a service may not include the files you would need to build or deploy it. Reading a filter is not the same as running X’s filter in production."
+/>
+
+<LimitBlock
+  id="bdsm-thresholds-redacted"
+  headline="The bot-detector tripwires are placeholders, not real cutoffs"
+  prose="The BDSM notes say the enforcement cutoffs ship as 9.99, which is outside the 0-to-1 range those scores use. They say publishing the real numbers would hand people the evasion line. The layout of the policy is real. The tuned numbers are not."
+/>
+
+<LimitBlock
+  id="bdsm-backing-stores"
+  headline="The stores that feed that bot model are not in this drop"
+  prose="The same BDSM notes say the scoring pipeline talks to an internal key-value store and to account metadata over the network. The client code is included. The backing services are not. You cannot stand up that live scoring path from these files alone."
+/>
+
+<LimitBlock
+  id="interstitial-not-drawn"
+  headline="This drop does not draw the cover that sits over a post"
+  prose="When visibility filtering answers cover, the README says the post stays in the feed. It also says nothing in this repository draws that cover. Reading the allow / cover / drop answer is not the same as rendering it."
+/>
+
+<LimitBlock
+  id="ads-who-to-follow"
+  headline="This drop does not assemble ads or Who to Follow"
+  prose="The README diagram says ranked posts are only one source in the last mix. The other items it names are ads, Who to Follow, prompts, and similar non-post slots. Those extra sources are named around the ranked posts. Their implementations are not a walk-up run in this folder."
+/>
+
+<LimitBlock
+  id="phoenix-optimizer"
+  headline="The published trainer is not the internal production optimizer"
+  prose="Phoenix says one training-recipe exception is disclosed on purpose. The public trainer uses a standard optimizer called AdamW. The notes say production uses a tuned internal variant in that same slot. A practice run still trains with the published recipe."
+/>
 
 ## How we checked
 
-Method and commit go here.
+We cloned the public GitHub repository, recorded the commit, and copied short passages. We did not use leaked older trees, news stories, or guesses about private servers as proof.
 
 ## Sources
 
-Links go here.
+- https://github.com/xai-org/x-algorithm
+- Permalinks are the citation links on each card

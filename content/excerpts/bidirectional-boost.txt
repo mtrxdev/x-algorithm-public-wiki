@@ -1,0 +1,11 @@
+# Example algorithm diff: bidirectional follow boost
+
+Going forward, you'll see future algorithm updates published to this open source repository, and you should be able to understand what changed by checking the diffs. 
+
+To give you a sense of what this will feel like, here's what you might've seen as the widely-discussed [bidirectional follow algorithm change](https://x.com/nikitabier/status/2076747704248758617) rolled out in July 2026. In plain language, the bidirectional follow boost boosts original posts from people you mutually follow by increasing the weight on the predicted probability that you'll reply to a post from one of those authors who you mutually follow.
+
+On July 10, 2026, we began an A/B test that implemented the bidirectional follow reply boost where a small percentage of users got randomly assigned to bidirectional follow reply boost values of 5, 10, 15, or 20 (most users' value was set to 0 at that time, which is equivalent to no bidirectional follow reply boost). You will also see code from a bidirectional follow dwell weight boost, which was initially tested as part of the same A/B test but not shipped more broadly.
+
+On July 13, 2026, after seeing great initial results from the A/B test, we rolled out a boost value of 20 to many users, while we continued experimenting with other boost values including 0, 5, 10, and 15 with varying percentages of users.
+
+Then, on July 24, 2026, after getting results back from experimentation and hearing feedback on X — e.g. that the World Cup was happening yet some people weren't seeing as much discussion of it as they wanted, given many of the posts were from accounts they didn't follow — we set the bidirectional follow reply boost value to 15 instead of 20.

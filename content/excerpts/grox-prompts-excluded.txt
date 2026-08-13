@@ -1,0 +1,1 @@
+# As stated in README for the open source repo, prompts are excluded to reduce gameability of the system.

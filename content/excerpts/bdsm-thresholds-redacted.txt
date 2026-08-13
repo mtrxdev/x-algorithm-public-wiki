@@ -1,0 +1,9 @@
+- The results-sink enforcement **operating points** — the per-head decision
+  thresholds in `runtime/sink_policy.yaml` (and the matching fallback defaults
+  in `score_results_sink_focal.py`) — are **redacted** in this public release:
+  they ship as an out-of-range `9.99` sentinel (the fields are probabilities in
+  `[0, 1]`, so `9.99` never fires and is plainly a placeholder, not a real
+  value). Publishing exact operating points would hand adversaries the
+  detector's evasion boundary. The policy *structure*, head names, and gate
+  logic are real and unredacted; only the tuned numbers are withheld. Supply
+  your own via `--policy-file` / `BDSM_SINK_POLICY`.

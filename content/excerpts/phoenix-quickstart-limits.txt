@@ -1,0 +1,6 @@
+# Quickstart
+
+This walkthrough verifies the shipped nano ranking and retrieval paths with
+synthetic data: train, checkpoint, resume, serve, then send a retrieve → rank
+request. It is not a production-quality model or a production-scale setup.
+Production data, checkpoints, orchestration, and scale are not included.

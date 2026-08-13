@@ -1,0 +1,5 @@
+# Behavioral Inauthentic-Account Detection
+
+A sequence-of-actions transformer that detects inauthentic (bot / spam /
+coordinated) accounts from their behavioral event streams, together with the
+task-head training stack and a reference streaming scoring pipeline.

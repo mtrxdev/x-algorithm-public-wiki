@@ -1,0 +1,4 @@
+Two things to know about how the rules run:
+
+- The first rule that answers drop ends the evaluation.
+- A further set of rules applies only when the post is a recommendation from an account the viewer does not follow, and those rules can only drop — spam caught at high recall, for instance. The same post is allowed to a follower. Both sets are listed in evaluation order in [`visibility-filtering/rules/registry.rs`](visibility-filtering/rules/registry.rs).

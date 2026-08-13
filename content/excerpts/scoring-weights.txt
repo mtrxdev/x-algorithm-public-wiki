@@ -1,0 +1,10 @@
+// These weights reflect a combination of how much an action is
+// valued in ranking and typical propensities of these actions
+// across the X network (e.g. negative feedback is overall rare).
+param!(FavoriteWeight, f64, "rust_home_mixer_favorite_weight", 0.5);
+param!(ReplyWeight, f64, "rust_home_mixer_reply_weight", 5.0);
+param!(
+    BidirectionalFollowReplyWeightBoost,
+    f64,
+    "rust_home_mixer_bidirectional_follow_reply_weight_boost",
+    15.0

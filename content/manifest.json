@@ -1,16 +1,169 @@
 {
   "repo": "xai-org/x-algorithm",
-  "commit": "abc",
-  "fetched_at": "2026-08-13T00:00:00Z",
+  "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+  "fetched_at": "2026-08-13T21:03:23Z",
   "citations": [
     {
       "id": "readme-lede",
       "repo": "xai-org/x-algorithm",
-      "commit": "abc",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
       "path": "README.md",
       "start_line": 1,
       "end_line": 3,
       "excerpt_file": "readme-lede.txt"
+    },
+    {
+      "id": "readme-phoenix-runnable",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 417,
+      "end_line": 419,
+      "excerpt_file": "readme-phoenix-runnable.txt"
+    },
+    {
+      "id": "readme-not-published",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 399,
+      "end_line": 406,
+      "excerpt_file": "readme-not-published.txt"
+    },
+    {
+      "id": "readme-deployment",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 417,
+      "end_line": 419,
+      "excerpt_file": "readme-deployment.txt"
+    },
+    {
+      "id": "phoenix-quickstart-limits",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "phoenix/QUICKSTART.md",
+      "start_line": 1,
+      "end_line": 6,
+      "excerpt_file": "phoenix-quickstart-limits.txt"
+    },
+    {
+      "id": "phoenix-quickstart-requirements",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "phoenix/QUICKSTART.md",
+      "start_line": 10,
+      "end_line": 14,
+      "excerpt_file": "phoenix-quickstart-requirements.txt"
+    },
+    {
+      "id": "readme-license",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 467,
+      "end_line": 469,
+      "excerpt_file": "readme-license.txt"
+    },
+    {
+      "id": "readme-inspectable",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 417,
+      "end_line": 419,
+      "excerpt_file": "readme-inspectable.txt"
+    },
+    {
+      "id": "scoring-weights",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "home-mixer/params/param.rs",
+      "start_line": 279,
+      "end_line": 288,
+      "excerpt_file": "scoring-weights.txt"
+    },
+    {
+      "id": "bidirectional-boost",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "docs/BIDIRECTIONAL_BOOST_CHANGE.md",
+      "start_line": 1,
+      "end_line": 11,
+      "excerpt_file": "bidirectional-boost.txt"
+    },
+    {
+      "id": "visibility-rules",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 378,
+      "end_line": 381,
+      "excerpt_file": "visibility-rules.txt"
+    },
+    {
+      "id": "bdsm-lede",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "bdsm/README.md",
+      "start_line": 1,
+      "end_line": 5,
+      "excerpt_file": "bdsm-lede.txt"
+    },
+    {
+      "id": "grox-prompts-excluded",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "grox/flows/ptos/prompts.py",
+      "start_line": 11,
+      "end_line": 11,
+      "excerpt_file": "grox-prompts-excluded.txt"
+    },
+    {
+      "id": "bdsm-thresholds-redacted",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "bdsm/README.md",
+      "start_line": 104,
+      "end_line": 112,
+      "excerpt_file": "bdsm-thresholds-redacted.txt"
+    },
+    {
+      "id": "bdsm-backing-stores",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "bdsm/README.md",
+      "start_line": 82,
+      "end_line": 86,
+      "excerpt_file": "bdsm-backing-stores.txt"
+    },
+    {
+      "id": "interstitial-not-drawn",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 211,
+      "end_line": 212,
+      "excerpt_file": "interstitial-not-drawn.txt"
+    },
+    {
+      "id": "ads-who-to-follow",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "README.md",
+      "start_line": 132,
+      "end_line": 137,
+      "excerpt_file": "ads-who-to-follow.txt"
+    },
+    {
+      "id": "phoenix-optimizer",
+      "repo": "xai-org/x-algorithm",
+      "commit": "a389166f6cf5da70a286b568c87695d4dcdce3a1",
+      "path": "phoenix/README.md",
+      "start_line": 17,
+      "end_line": 19,
+      "excerpt_file": "phoenix-optimizer.txt"
     }
   ]
 }

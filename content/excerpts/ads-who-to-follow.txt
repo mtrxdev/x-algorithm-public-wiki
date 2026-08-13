@@ -1,0 +1,6 @@
+│  ┌────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ the ranked posts are one source here; the others add non-post items:               │  │
+│  │    ads · Who to Follow · prompts · push-to-home, etc.                              │  │
+│  │                                                                                    │  │
+│  │ <a href="home-mixer/selectors/blender_selector.rs">BlenderSelector</a> interleaves them. The default <a href="home-mixer/ads/partition_organic_blender.rs">ads blender</a> reorders                 │  │
+│  │ posts for ad adjacency. Who to Follow and prompts go at fixed positions.           │  │
