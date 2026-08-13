@@ -6,3 +6,6 @@ vendor
 .vercel
 *.log
 .env*
+.superpowers/
+.grok/skills/**
+!.grok/skills/SOURCES.md
