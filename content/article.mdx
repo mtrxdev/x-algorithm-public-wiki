@@ -133,7 +133,7 @@ Every gray box is a quote from a file in that public folder. The small line unde
 <LimitBlock
   id="phoenix-optimizer"
   headline="The published trainer is not the internal production optimizer"
-  prose="Phoenix says one training-recipe exception is disclosed on purpose. The public trainer uses a standard optimizer called AdamW. The notes say production uses a tuned internal variant in that same slot. A practice run still trains with the published recipe."
+  prose="Phoenix says what is not shipped is xAI-specific infrastructure: production data feeds, cluster orchestration, and internal telemetry. Those seams are replaced by a documented local equivalent, and synthetic data is included so the system can run end to end. One training-recipe exception is disclosed: the public trainer uses standard AdamW, not production’s tuned internal optimizer."
 />
 
 ## How we checked

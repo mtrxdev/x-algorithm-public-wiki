@@ -1,7 +1,3 @@
-## Components
-
-
-
 ### Home Mixer and Candidate Pipeline
 
 
