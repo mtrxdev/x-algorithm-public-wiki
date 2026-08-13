@@ -17,8 +17,7 @@ export function ArticleLayout({
 }) {
   const short = commit.slice(0, 7);
   return (
-    <div className="shell">
-      <ChapterMotion />
+    <ChapterMotion>
       <TableOfContents headings={headings} />
       <div>
         <p className="kicker">Independent explainer of public code</p>
@@ -36,6 +35,6 @@ export function ArticleLayout({
           Checked against xai-org/x-algorithm commit {short} on {fetchedAt}.
         </footer>
       </div>
-    </div>
+    </ChapterMotion>
   );
 }
