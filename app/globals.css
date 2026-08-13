@@ -19,6 +19,13 @@ body {
 p, li, h1, h2, h3 { overflow-wrap: anywhere; }
 .lede { font-size: 1.15rem; }
 .kicker { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); font-family: system-ui, sans-serif; }
+.checklist { font-family: system-ui, sans-serif; margin: 2rem 0 2.5rem; }
+.checklist > p:not(.kicker) { color: var(--muted); font-size: 0.95rem; }
+.checklist ol { list-style: none; padding: 0; margin: 1rem 0 0; }
+.checklist li { border: 1px solid var(--ink); border-bottom: none; }
+.checklist li:last-child { border-bottom: 1px solid var(--ink); }
+.checklist a { display: block; padding: 0.7rem 0.85rem; color: var(--ink); text-decoration: none; }
+.checklist a:hover, .checklist a:focus-visible { background: var(--code); }
 .toc { position: sticky; top: 1.5rem; align-self: start; font-family: system-ui, sans-serif; font-size: 0.85rem; }
 .toc a { color: var(--muted); text-decoration: none; }
 .toc ol { list-style: none; padding: 0; }

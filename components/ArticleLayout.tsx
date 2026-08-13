@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CreatorChecklist } from "./CreatorChecklist";
 import { TableOfContents } from "./TableOfContents";
 import type { Heading } from "@/lib/headings";
 
@@ -27,6 +28,7 @@ export function ArticleLayout({
             not a score for your account.
           </p>
         </header>
+        <CreatorChecklist />
         {children}
         <footer className="cite">
           Checked against xai-org/x-algorithm commit {short} on {fetchedAt}.
