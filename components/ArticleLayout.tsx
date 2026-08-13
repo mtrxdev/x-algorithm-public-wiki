@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ChapterMotion } from "./ChapterMotion";
 import { CreatorChecklist } from "./CreatorChecklist";
 import { TableOfContents } from "./TableOfContents";
 import type { Heading } from "@/lib/headings";
@@ -17,6 +18,7 @@ export function ArticleLayout({
   const short = commit.slice(0, 7);
   return (
     <div className="shell">
+      <ChapterMotion />
       <TableOfContents headings={headings} />
       <div>
         <p className="kicker">Independent explainer of public code</p>
