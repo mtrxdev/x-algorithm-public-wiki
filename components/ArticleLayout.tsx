@@ -20,11 +20,11 @@ export function ArticleLayout({
       <div>
         <p className="kicker">Independent explainer of public code</p>
         <header>
-          <h1>What you can actually make from X’s public ranking code</h1>
+          <h1>What the public ranking files say about your posts</h1>
           <p className="lede">
             A plain-language report on the public GitHub repository
-            xai-org/x-algorithm. This page is not X, not xAI, and not the live
-            For You feed.
+            xai-org/x-algorithm. This page is not X, not the live feed, and
+            not a score for your account.
           </p>
         </header>
         {children}

@@ -1,10 +1,10 @@
 :root {
   color-scheme: light;
-  --ink: #1a1a1a;
-  --muted: #4a4a4a;
-  --line: #d6d6d0;
-  --paper: #f7f4ee;
-  --code: #f0ece4;
+  --paper: #f4efe6;
+  --ink: #1c1914;
+  --muted: #6b6358;
+  --line: #cfc6b8;
+  --code: #ece6da;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
