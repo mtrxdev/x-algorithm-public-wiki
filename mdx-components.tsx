@@ -1,9 +1,11 @@
 import type { MDXComponents } from "mdx/types";
+import { ChapterOpener } from "@/components/ChapterOpener";
 import { EvidenceBlock } from "@/components/EvidenceBlock";
 import { LimitBlock } from "@/components/LimitBlock";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    ChapterOpener,
     EvidenceBlock,
     LimitBlock,
     h2: ({ children }) => {
