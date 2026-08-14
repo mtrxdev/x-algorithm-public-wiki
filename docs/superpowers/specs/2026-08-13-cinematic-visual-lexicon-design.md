@@ -1,7 +1,7 @@
 # Cinematic visual lexicon — Design Spec
 
 Date: 2026-08-13  
-Status: Awaiting user review of this written spec  
+Status: Approved; parallax added after review  
 Branch: `feat/creator-longread-redesign`  
 Workspace: `/home/ubuntu/x-algorithm/.worktrees/feat-creator-longread-redesign`
 
@@ -21,7 +21,7 @@ This is a visual overhaul of the existing one-URL creator long-read, not a new p
 - No named celebrities. No unofficial X/xAI logos.
 - No gaming advice.
 - Images lazy-loaded, reserved aspect ratio (CLS), WebP or optimized JPEG, contrast 4.5:1 on text over photos (scrim).
-- `prefers-reduced-motion` still disables GSAP and smooth scroll.
+- `prefers-reduced-motion` still disables GSAP, smooth scroll, **and parallax**.
 - Evidence verifier still passes.
 
 ## 3. Non-goals
@@ -90,7 +90,10 @@ Checklist: six crops (4:5 or 1:1) of the same stills, ink/zinc borders, not colo
 ## 7. Motion and a11y
 
 - Keep existing reduced-motion CSS and GSAP gate.
-- Optional: stills fade 300–400ms `power1.out` on enter. No parallax, no pin.
+- **Fluid scroll parallax is required.** The page never pins or scroll-jacks. As the reader scrolls down, each opener still moves continuously with the wheel/touch (GSAP ScrollTrigger `scrub: true`, or equivalent scroll-linked `transform`). No one-shot fade that plays once and stops. Motion is 1:1 with scroll position: scrub back up and the still eases back.
+- Implementation: the still is taller than the frame (about 125% height), clipped by `overflow: hidden`. It translates on Y at factor **0.28** (image lags the page). Animate `transform` only. No horizontal parallax.
+- Title and scrim stay locked to the opener frame (they do not parallax). The photo drifts; the words stay readable.
+- If `prefers-reduced-motion: reduce`: no parallax (image `object-fit: cover` at rest), no GSAP, `scroll-behavior: auto`.
 - Meaningful images: descriptive alt. Decorative crops: empty alt only if the opener already described them.
 - Text on images only on the scrim, not burned into the JPEG.
 
@@ -111,5 +114,6 @@ Checklist: six crops (4:5 or 1:1) of the same stills, ink/zinc borders, not colo
 | Placement | Full-bleed chapter openers |
 | Approach | A — openers + dark Swiss page |
 | People | Invented adults, not celebrities |
+| Parallax | Fluid, scroll-scrubbed, factor 0.28 on stills only; no pin; off under reduced motion |
 
 No remaining TBD.
