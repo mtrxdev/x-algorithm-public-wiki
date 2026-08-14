@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { Still } from "@/lib/stills";
+import { OpenerParallax } from "@/components/OpenerParallax";
 
 export function ChapterOpener({
   still,
@@ -15,7 +16,9 @@ export function ChapterOpener({
   return (
     <section className="opener">
       <div className="opener-frame">
-        <img className="opener-img" src={still.src} alt={still.alt} width={1920} height={1080} />
+        <OpenerParallax>
+          <img className="opener-img" src={still.src} alt={still.alt} width={1920} height={1080} />
+        </OpenerParallax>
         <div className="opener-scrim">
           <p className="kicker">{kicker}</p>
           <p className="opener-title" aria-hidden="true">
