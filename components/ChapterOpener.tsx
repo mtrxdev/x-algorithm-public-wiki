@@ -18,7 +18,9 @@ export function ChapterOpener({
         <img className="opener-img" src={still.src} alt={still.alt} width={1920} height={1080} />
         <div className="opener-scrim">
           <p className="kicker">{kicker}</p>
-          <h2>{title}</h2>
+          <p className="opener-title" aria-hidden="true">
+            {title}
+          </p>
         </div>
       </div>
       <div className="opener-body">{children}</div>

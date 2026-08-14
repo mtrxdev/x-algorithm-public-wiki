@@ -28,8 +28,22 @@ p, li, h1, h2, h3 { overflow-wrap: anywhere; }
 .checklist ol { list-style: none; padding: 0; margin: 1rem 0 0; }
 .checklist li { border: 1px solid var(--ink); border-bottom: none; }
 .checklist li:last-child { border-bottom: 1px solid var(--ink); }
-.checklist a { display: block; padding: 0.7rem 0.85rem; color: var(--ink); text-decoration: none; }
+.checklist a { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 0.85rem; color: var(--ink); text-decoration: none; }
 .checklist a:hover, .checklist a:focus-visible { background: var(--code); }
+.checklist-thumb {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: cover;
+  object-position: 50% 40%;
+  border: 1px solid var(--line);
+}
+.checklist-thumb[data-still="drop"] { object-position: 50% 28%; }
+.checklist-thumb[data-still="found"] { object-position: 20% 45%; }
+.checklist-thumb[data-still="scored"] { object-position: 70% 35%; }
+.checklist-thumb[data-still="hide"] { object-position: 50% 20%; }
+.checklist-thumb[data-still="missing"] { object-position: 55% 60%; }
+.checklist-thumb[data-still="run"] { object-position: 40% 30%; }
 .toc { position: sticky; top: 1.5rem; align-self: start; font-family: var(--font-ui), system-ui, sans-serif; font-size: 0.85rem; }
 .toc a { color: var(--muted); text-decoration: none; }
 .toc ol { list-style: none; padding: 0; }
@@ -54,4 +68,5 @@ pre { background: var(--code); padding: 1rem; overflow: auto; border: 1px solid 
   background: linear-gradient(transparent, #09090B 80%);
   padding: 4rem 1.25rem 1.25rem;
 }
-.opener-scrim h2 { margin: 0.35rem 0 0; }
+.opener-title { margin: 0.35rem 0 0; font-size: 1.5em; font-weight: 700; }
+.opener-body > h2:first-child { margin-top: 1.25rem; }
